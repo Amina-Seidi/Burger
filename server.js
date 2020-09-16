@@ -1,9 +1,18 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
-
+// const mysql = require("mysql");
 // Import routes and give the server access to them.
 const routes = require("./controllers/burgersController.js");
 
+// const connection = mysql.createConnection({
+//   host: 'localhost',
+//   user: 'root',
+//   password: 'Laurel_196',
+//   database: 'burgers_db',
+//   port: 3000
+// });
+
+// connection.connect();
 const PORT = process.env.PORT || 3000;
 
 // Create an instance of the express app.
