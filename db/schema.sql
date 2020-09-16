@@ -8,4 +8,4 @@ burger_name VARCHAR(30),
 devoured BOOLEAN default false,
 PRIMARY KEY (id)
 )
-
+SELECT * FROM burgers;
