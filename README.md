@@ -1,7 +1,4 @@
 # Eat-Da-Burger_App
-
-# Demo
- 
  
  # Table of Contents
 
