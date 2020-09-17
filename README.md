@@ -1,7 +1,7 @@
 # Eat-Da-Burger_App
 
 # Demo
- ![README Generator Demo](demo//ReadmeDemo.gif)
+ 
  
  # Table of Contents
 
