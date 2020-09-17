@@ -4,13 +4,13 @@ const router = express.Router();
 const burger = require("../models/burger.js");
 
 // Create all our routes and set up logic within those routes where required.
-router.get('/', function(req, res) {
+router.get("/", function(req, res) {
 	burger.all(function(data) {
 		var hbsObject = {
 			burgers: data
 		};
 		console.log(hbsObject);
-		res.render('index', hbsObject);
+		res.render("index", hbsObject);
 	});
 });
 
@@ -18,7 +18,7 @@ router.get('/', function(req, res) {
 // burger name the user entered then as a callback it
 // redirects back to the /index route
 router.post("/api/burgers", function(req, res) {
-	burger.insertBurger(['burger_name', 'devoured'], [req.body.name, req.body.devoured], function(result) {
+	burger.create(["burger_name", "devoured"], [req.body.name, req.body.devoured], function(result) {
 		res.json({ id: result.insertId});
 	});
 });
@@ -28,9 +28,10 @@ router.post("/api/burgers", function(req, res) {
 // then does a callback that redirects to the /index endpoint
 router.put("/api/burgers/:id", function(req, res) {
 	var condition = "id = " + req.params.id;
+	
 	console.log("condition", condition);
 
-	burger.updateBurger(
+	burger.update(
 		{
 			devoured: req.body.devoured
 		}, 

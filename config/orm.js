@@ -20,7 +20,7 @@ function objToSql(ob) {
 			if (typeof value === "string" && value.indexOf(" ") >= 0){
         value = "'" + value + "'";
 			}
-			arr.push(key + '=' + ob[key]);
+			arr.push(key + '=' + value);
 		}
 	}
 
@@ -52,7 +52,7 @@ var orm = {
 		queryString += ")";
 
 		console.log(queryString);
-		console.log(vals);
+
 
 		connection.query(queryString, vals, function(err, result) {
 			if (err) {

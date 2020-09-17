@@ -1,6 +1,6 @@
 const orm = require("../config/orm.js");
 
-const burgers = {
+const burger = {
 	// all for getting all the burgers
   all: function(cb) {
 		orm.all("burgers", function(res) {
@@ -8,18 +8,18 @@ const burgers = {
 		});
 	},
 	// insert burger for adding a new burger
-	insertBurger: function(cols, vals, cb) {
-		orm.insertOne("burgers", cols, vals, function(res) {
+	create: function(cols, vals, cb) {
+		orm.create("burgers", cols, vals, function(res) {
 			cb(res);
 		});
 	},
 	// update for changing the burger status
-	updateBurger: function(objColVals, condition, cb) {
-		orm.updateOne("burgers", objColVals, condition, function(res) {
+	update: function(objColVals, condition, cb) {
+		orm.update("burgers", objColVals, condition, function(res) {
 			cb(res);
 		});
 	}
 };
 
 // export burger back to the controller
-module.exports = burgers;
+module.exports = burger;
