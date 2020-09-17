@@ -1,15 +1,15 @@
-var orm = require("../config/orm.js");
+const orm = require("../config/orm.js");
 
-var burger = {
+const burgers = {
 	// all for getting all the burgers
-  selectAll: function(cb) {
-		orm.selectAll("burgers", function(res) {
+  all: function(cb) {
+		orm.all("burgers", function(res) {
 			cb(res);
 		});
 	},
 	// insert burger for adding a new burger
 	insertBurger: function(cols, vals, cb) {
-		orm.create("burgers", cols, vals, function(res) {
+		orm.insertOne("burgers", cols, vals, function(res) {
 			cb(res);
 		});
 	},
@@ -22,4 +22,4 @@ var burger = {
 };
 
 // export burger back to the controller
-module.exports = burger;
+module.exports = burgers;

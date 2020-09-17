@@ -1,19 +1,11 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
-// const mysql = require("mysql");
+const PORT = process.env.PORT || 3000;
+
 // Import routes and give the server access to them.
 const routes = require("./controllers/burgersController.js");
 
-// const connection = mysql.createConnection({
-//   host: 'localhost',
-//   user: 'root',
-//   password: 'Laurel_196',
-//   database: 'burgers_db',
-//   port: 3000
-// });
 
-// connection.connect();
-const PORT = process.env.PORT || 3000;
 
 // Create an instance of the express app.
 const app = express();
@@ -33,5 +25,5 @@ app.set("view engine", "handlebars");
 app.use(routes);
 
 app.listen(PORT, function() {
-  console.log("Server is now listening on PORT: " + PORT);
+  console.log("Server is now listening on PORT:" + PORT);
 });
